@@ -25,7 +25,7 @@ pipeline {
 		stage('Run Script') {
 			steps {
 				script {
-				    sh 'python iam-user-creation.py $user $group_option '
+				    sh 'python iam-user-creation.py --user $user --group $group_option'
 				}
 			}
 		}
