@@ -9,11 +9,11 @@ pipeline {
       string (
         name: 'user',
         defaultValue: 'false',
-        decription: 'Enter user name')
+        description: 'Enter user name')
       string (
         name: 'group_option',
         defaultValue: 'false',
-        decription: 'Enter group Number')
+        description: 'Enter group Number')
     }  
   stages {
 	stage('SCM Checkout') {
