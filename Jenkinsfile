@@ -4,7 +4,7 @@ pipeline {
 		PROJECT = "gsws-2.0-dev-revenue-service-api"
 		IMAGE = "$PROJECT:$VERSION"
 	}
-  agent any {
+  agent any 
     parameters {
       string (
         name: 'user',
@@ -15,9 +15,8 @@ pipeline {
         defaultValue: 'false',
         decription: 'Enter group Number')
     }  
-  }
   stages {
-		stage('SCM Checkout') {
+	stage('SCM Checkout') {
             steps {
             // Get source code from Gitlab Repository
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/shareef242/aws-iam-user.git']]])
