@@ -7,12 +7,12 @@ pipeline {
   agent any 
     parameters {
       string (
-        name: 'user',
+        name: 'USER_NAME',
         defaultValue: 'false',
         description: 'Enter user name')
-      string (
-        name: 'group_option',
-        defaultValue: 'false',
+      choice (
+        name: 'GROUP_OPTION',
+        choices: ['1', '2', '3'],
         description: 'Enter group Number')
     }  
   stages {
@@ -25,6 +25,8 @@ pipeline {
 		stage('Run Script') {
 			steps {
 				script {
+					user = params.USER_NAME
+					group_option = params.GROUP_OPTION
 					sh 'python iam-user-creation.py --user ${user} --group ${group_option}'
 				}
 			}
