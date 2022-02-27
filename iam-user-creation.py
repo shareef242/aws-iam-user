@@ -34,7 +34,7 @@ for group in groups:
     print("%d: %s" % (index, group["GroupName"]))
     index +=1
     
-group_option int(input("Please pick a Group Number: "))
+group_option = int(input("Please pick a Group Number: "))
 arn = groups[group_option-1]["Arn"]
 print("You selected option %d: %s" % (option, arn))
 
