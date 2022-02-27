@@ -19,8 +19,8 @@ password = ''.join(random.coice(characters) for i in range(12))
 print("random password is:", password)
 
 response1 = client.create_login_profile(
-    UserName=user
-    Password=password
+    UserName=user,
+    Password=password,
     PasswordResetRequired=True
 )
 print(response1)
