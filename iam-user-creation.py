@@ -1,6 +1,7 @@
 import boto3
 import random
 import string
+import os
 
 iam = boto3.resource('iam')
 iam_keys = boto3.resource('iam')
@@ -9,7 +10,7 @@ attach_group = boto3.client('iam')
 grp = boto3.client('iam')
 client = boto3.client('iam')
 
-user = input("Please enter username: ") $user
+user = os.getenv("user")
 response = iam.create_user(UserName=user)
 print(response)
 
