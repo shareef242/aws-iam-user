@@ -9,8 +9,8 @@ attach_group = boto3.client('iam')
 grp = boto3.client('iam')
 client = boto3.client('iam')
 
-user = $1
-response = iam.create_user(UserName="${user}")
+user = input("Please enter username: ") $user
+response = iam.create_user(UserName=user)
 print(response)
 
 #get random pass
