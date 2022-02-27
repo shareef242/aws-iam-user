@@ -11,7 +11,7 @@ grp = boto3.client('iam')
 client = boto3.client('iam')
 
 user = os.getenv('user')
-response = iam.create_user(UserName=user)
+response = iam.create_user(UserName='user')
 print(response)
 
 #get random pass
