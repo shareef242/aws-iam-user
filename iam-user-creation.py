@@ -9,7 +9,7 @@ attach_group = boto3.client('iam')
 grp = boto3.client('iam')
 client = boto3.client('iam')
 
-user = "${user}"
+user = input()
 response = iam.create_user(UserName="${user}")
 print(response)
 
